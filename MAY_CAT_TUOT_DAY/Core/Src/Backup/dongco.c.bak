@@ -1,0 +1,28 @@
+/** Put this in the src folder **/
+
+#include "dongco.h"
+#include "encoder.h"
+
+#define PUL_MOTOR3_PORT	GPIOA
+#define PUL_MOTOR3_PIN	GPIO_PIN_3
+int xungCat = 200; //so xung ma dong co quay cat dut day
+
+void catDay(void)
+{
+	MOTOR3_XUONG;
+	for(int i = 0; i <= xungCat; i++)
+		{
+			PUL_MOTOR3_PORT -> BSRR = PUL_MOTOR3_PIN;
+			HAL_Delay(1);
+			PUL_MOTOR3_PORT -> BSRR = PUL_MOTOR3_PIN;
+			HAL_Delay(1);
+		}
+	MOTOR3_LEN;
+	for(int i = 0; i <= xungCat; i++)
+		{
+			PUL_MOTOR3_PORT -> BSRR = PUL_MOTOR3_PIN;
+			HAL_Delay(1);
+			PUL_MOTOR3_PORT -> BSRR = PUL_MOTOR3_PIN;
+			HAL_Delay(1);
+		}
+}

@@ -1,0 +1,9 @@
+#ifndef  __DELAY_H__
+#define  __DELAY_H__
+#define System_clock 72000000
+#include "main.h"
+
+void SysTick_delay_ms(unsigned int ms);
+void SysTick_delay(unsigned int ms);
+
+#endif 

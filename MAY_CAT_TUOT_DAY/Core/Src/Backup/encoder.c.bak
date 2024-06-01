@@ -1,0 +1,15 @@
+#include "encoder.h"
+
+void doDaiDayTuot1(int lenght)
+{
+	
+}
+void doDaiDayTuot2(int lenght)
+{
+	
+}
+
+void doDaiDayCanCat(int lenght)
+{
+	
+}

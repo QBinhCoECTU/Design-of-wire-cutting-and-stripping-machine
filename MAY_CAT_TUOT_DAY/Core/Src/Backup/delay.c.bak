@@ -1,0 +1,15 @@
+#include "main.h"
+#include "delay.h"
+
+void SysTick_delay(unsigned int us) // Chi chay toi da vs tham so x = 2097
+{
+	SysTick->LOAD = (System_clock /1000000*us) - 8 ; // set reload register
+	SysTick->VAL = 0; // Load the SysTick Counter Value
+	SysTick->CTRL = 5; // Select Core clock + ENABLE
+	while((SysTick->CTRL & 1<<16) == 0);
+}
+
+void SysTick_delay_ms(unsigned int ms){ //Ham goi voi ms > 2097ms
+	for(int i = 0; i < ms; i++)
+		SysTick_delay(1000);
+}
